@@ -168,3 +168,55 @@ def cap_double_time(principal, rate, total_amount):
     float: The time in years required for the investment to double.
     """   
     return cd_time
+principal = 15000.00
+rate = 12.5
+total_amount = 15000.00
+print(f"\nPrincipal: R{principal:.2f}, Rate: {rate}%, Total Amount: R{total_amount:.2f}")
+print(f"Question 8: {cap_double_time(principal, rate, total_amount):.2f} years")   
+#print(f"Question 8: {cap_double_time(15000, 12.5, 15000):.2f} years")
+
+
+
+# --------  Question 9: Effective Annual Rate --------
+def effective_annual_rate(nominal_rate, compounding_periods):
+    ear = ((1 + nominal_rate / (compounding_periods * 100)) ** compounding_periods) - 1
+    """
+    Calculate the effective annual rate (EAR) based on the nominal interest rate and compounding periods.
+    Parameters:
+    nominal_rate (float): The nominal annual interest rate (in percentage).
+    compounding_periods (int): The number of times interest is compounded per year.
+
+    Returns:
+    float: The effective annual rate (in percentage).
+    """   
+    return ear * 100
+nominal_rate = 13.4
+compounding_periods = 12
+print(f"\nNominal Rate: {nominal_rate}%, Compounding Periods: {compounding_periods} times/year")
+print(f"Question 9: {effective_annual_rate(nominal_rate, compounding_periods):.2f}%")   
+#print(f"Question 9: {effective_annual_rate(13.4, 12):.2f}%")
+
+
+
+# --------  Question 10: Fund Growth --------
+def fund_growth(initial_investment, annual_contribution, rate, time):
+    fg = (initial_investment * (1 + rate /(2 * 100)) ** (2*time))
+    """
+    Calculate the future value of an investment with regular contributions.
+    Parameters:
+    initial_investment (float): The initial amount of money invested.
+    annual_contribution (float): The amount contributed to the investment annually.
+    rate (float): The annual interest rate (in percentage).
+    time (float): The time the money is invested for (in years).
+
+    Returns:
+    float: The future value of the investment after accounting for contributions and interest.
+    """   
+    return fg
+initial_investment = 2500000.00
+annual_contribution = 2000.00
+rate = 15
+time = 10
+print(f"\nInitial Investment: R{initial_investment:.2f}, Annual Contribution: R{annual_contribution:.2f}, Rate: {rate}%, Time: {time} years")
+print(f"Question 10: R{fund_growth(initial_investment, annual_contribution, rate, time):.2f}")   
+#print(f"Question 10: R{fund_growth(5000, 2000, 8, 10):.2f}")
