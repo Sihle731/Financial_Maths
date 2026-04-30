@@ -110,3 +110,61 @@ def reducing_depreciation(cost, rate, time):
 #print(f"\nCost: R{cost:.2f}, Rate: {rate}%, Time: {time} years")
 #print(f"Question 5: R{reducing_depreciation(cost, rate, time):.2f}")
 print(f"Question 5: R{reducing_depreciation(480000.00, 18, 6):.2f}")
+
+
+# ---------  Question 6: Quarterly Compound Interest --------
+def compound_interest_quarterly(principal, rate, time):
+    ciq = principal * (1 + rate / 400) ** (4 * time)
+    """
+    Calculate compound interest compounded quarterly.
+    Parameters:
+    principal (float): The initial amount of money.
+    rate (float): The annual interest rate (in percentage).
+    time (float): The time the money is invested for (in years).
+
+    Returns:
+    float: The compound interest earned.
+    """   
+    return ciq
+#principal = 95000.00
+#rate = 9
+#time = 4
+#print(f"\nPrincipal: R{principal:.2f}, Rate: {rate}%, Time: {time} years")
+#print(f"Question 6: R{compound_interest_quarterly(principal, rate, time):.2f}")
+print(f"Question 6: R{compound_interest_quarterly(95000, 9, 4):.2f}")
+
+
+# ---------  Question 7: Loan Accrual   --------
+def loan_accrual(principal, rate, time):
+    la = (principal * (1 + (rate / (12 * 100))) ** 12) - principal
+    """
+    Calculate the total amount to be paid on a loan after accruing interest.
+    Parameters:
+    principal (float): The initial amount of the loan.
+    rate (float): The annual interest rate (in percentage).
+    time (float): The time the loan is taken for (in years).
+
+    Returns:
+    float: The total amount to be paid after accruing interest.
+    """   
+    return la
+principal = 30000.00
+rate = 14
+time = 1
+print(f"\nPrincipal: R{principal:.2f}, Rate: {rate}%, Time: {time} years")
+print(f"Question 7: R{loan_accrual(principal, rate, time):.2f}")
+#print(f"Question 7: R{loan_accrual(30000, 14, 1):.2f}")
+
+
+# --------  Question 8: Capital Doubling Time --------
+def cap_double_time(principal, rate, total_amount):
+    cd_time = (total_amount / (principal * (rate/100)))
+    """
+    Calculate the time required for an investment to double in value based on the Rule of 72.
+    Parameters:
+    rate (float): The annual interest rate (in percentage).
+
+    Returns:
+    float: The time in years required for the investment to double.
+    """   
+    return cd_time
